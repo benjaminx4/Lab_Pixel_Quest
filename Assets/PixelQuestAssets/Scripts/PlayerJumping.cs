@@ -4,7 +4,7 @@ public class PlayerJumping : MonoBehaviour
 {
     // Rigidbody
     private Rigidbody2D rigidbody2D; // Controls the speed 
-    public float JumpForce = 4; // Controls how high the player jumps 
+    public float JumpForce = 7; // Controls how high the player jumps 
 
     // Checks
     public Transform ground;     // Where the collision will be checked for 
@@ -21,7 +21,7 @@ public class PlayerJumping : MonoBehaviour
     void Update()
     {
         // Checks if the player is touching any object who's layermask is called Ground
-        bool groundCheck = Physics2D.OverlapCapsule(ground.position, new Vector2(1, 0.08f), CapsuleDirection2D.Horizontal, 0, groundMask);
+        bool groundCheck = Physics2D.OverlapCapsule(ground.position, new Vector2(1, 1f), CapsuleDirection2D.Horizontal, 0, groundMask);
 
 
         // Checks if the player can jump
