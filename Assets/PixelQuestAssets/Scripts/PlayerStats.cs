@@ -42,7 +42,7 @@ public class PlayerStats : MonoBehaviour
         // So we save the inforomation at the start of the game 
         maxCoins = CoinParent.transform.childCount;
         // Updates the UI to show the proper values of the level 
-        coinText.text = currentCoins + "/" + maxCoins;
+        //coinText.text = currentCoins + "/" + maxCoins;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
