@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -217,6 +214,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130101070}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -240,7 +238,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
@@ -256,7 +255,7 @@ CompositeCollider2D:
   m_CompositeGameObject: {fileID: 130101070}
 --- !u!50 &130101073
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -267,8 +266,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -289,6 +288,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130101070}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -312,7 +312,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -334,6 +335,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -565,21 +569,18 @@ PrefabInstance:
       propertyPath: JumpForce
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 7913389302355596905, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.9987663
-      objectReference: {fileID: 0}
     - target: {fileID: 8177227415980157264, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177227415980157264, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8177227415980157264, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1963191989}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
 --- !u!4 &473022044 stripped
 Transform:
@@ -650,6 +651,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489782135}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -673,7 +675,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
@@ -689,7 +692,7 @@ CompositeCollider2D:
   m_CompositeGameObject: {fileID: 489782135}
 --- !u!50 &489782139
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -700,8 +703,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -722,6 +725,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489782135}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -745,7 +749,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -767,6 +772,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1049,6 +1057,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1163,6 +1174,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880160352}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1186,7 +1198,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
@@ -1214,7 +1227,7 @@ CompositeCollider2D:
   m_CompositeGameObject: {fileID: 880160352}
 --- !u!50 &880160355
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1225,8 +1238,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1247,6 +1260,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880160352}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1270,7 +1284,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -1292,6 +1307,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1875,9 +1893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome!
-
-    Press A/D to walk, press [Space] to jump.'
+  m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 10277d683340c69479e1873cac2a5824, type: 2}
   m_sharedMaterial: {fileID: -6125814945911025732, guid: 10277d683340c69479e1873cac2a5824, type: 2}
@@ -1904,7 +1920,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 129
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1920,15 +1936,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2212,6 +2230,7 @@ PolygonCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646650919}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2235,7 +2254,8 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2313,6 +2333,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655480226}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2336,7 +2357,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
@@ -2352,7 +2374,7 @@ CompositeCollider2D:
   m_CompositeGameObject: {fileID: 1655480226}
 --- !u!50 &1655480229
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2363,8 +2385,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2385,6 +2407,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655480226}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2408,7 +2431,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -2430,6 +2454,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2564,6 +2591,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743429075}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2587,7 +2615,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
@@ -2603,7 +2632,7 @@ CompositeCollider2D:
   m_CompositeGameObject: {fileID: 1743429075}
 --- !u!50 &1743429079
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2614,8 +2643,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2636,6 +2665,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743429075}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2659,7 +2689,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -2681,6 +2712,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2839,79 +2873,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!1001 &1836736306
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1224224317435694482, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1018339001, guid: d8568e2a054b8d0458d057e22af29ad6, type: 3}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.000000029802322
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.035302144
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741854173681740130, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065070952556990774, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7159296443536290887, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_Name
-      value: Sign
-      objectReference: {fileID: 0}
-    - target: {fileID: 8160873800085650376, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851895800398322840, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.25
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2ed84303b3c1c3b44a85ef4e464a50c5, type: 3}
 --- !u!1 &1887673971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,6 +2961,7 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1646650920}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+  m_Padding: 0
 --- !u!1 &1946035914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +3006,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946035914}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3067,7 +3030,8 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
@@ -3083,7 +3047,7 @@ CompositeCollider2D:
   m_CompositeGameObject: {fileID: 1946035914}
 --- !u!50 &1946035917
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3094,8 +3058,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3116,6 +3080,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946035914}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3139,7 +3104,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -3161,6 +3127,9 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3231,24 +3200,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1963191988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8177227415980157264, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
-  m_PrefabInstance: {fileID: 473022043}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1963191989
-MonoBehaviour:
+--- !u!1001 &5441859543152688024
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963191988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2e717ece80d2243b600fe184315a27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: []
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4196263117550562466, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_Name
+      value: Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.035302144
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181701531977052551, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6c98d8e306a742389b4b5ecd54d85f8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3259,5 +3267,5 @@ SceneRoots:
   - {fileID: 473022043}
   - {fileID: 65991865}
   - {fileID: 1319544400}
-  - {fileID: 1836736306}
+  - {fileID: 5441859543152688024}
   - {fileID: 626143253}

@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         _yVelocity = Input.GetAxis(VerticalAxis);
 
         // Push the input data to the rigidbody 
-        _rigidbody2D.velocity = new Vector2(_xVelocity, _yVelocity) * speed;
+        _rigidbody2D.linearVelocity = new Vector2(_xVelocity, _yVelocity) * speed;
     }
 
 }

@@ -20,7 +20,7 @@ public class PQPlayerAnimator : MonoBehaviour
     void Update()
     {
         // Checks if player is standing still if so make play Idle animation 
-        if(rigidbody2D.velocity.x == 0)
+        if(rigidbody2D.linearVelocity.x == 0)
         {
             animator.SetBool(animParam, false);
         }

@@ -15,7 +15,6 @@ public class PQPlayerMovement : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
     }
 
     // Updates the player state.
@@ -33,7 +32,7 @@ public class PQPlayerMovement : MonoBehaviour
         }
 
         // Saves player input to the Rigidbody and makes the player move at the given speed.
-        rigidbody2D.velocity = new Vector2 (xMul * xVelocity, rigidbody2D.velocity.y);
+        rigidbody2D.linearVelocity = new Vector2 (xMul * xVelocity, rigidbody2D.linearVelocity.y);
 
     }
 }

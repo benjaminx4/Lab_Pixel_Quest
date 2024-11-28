@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     public void SetSpeed(Vector3 newSpeed)
     {
-        rigidbody2D.velocity = newSpeed * Random.Range(minSpeed,maxSpeed);
+        rigidbody2D.linearVelocity = newSpeed * Random.Range(minSpeed,maxSpeed);
     }
 
     //==================================================================================================================

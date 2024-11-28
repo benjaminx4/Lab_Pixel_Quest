@@ -67,7 +67,7 @@ public class PlayerStats : MonoBehaviour
                     // Play Sound Effect
                     deathSFX.Play();
                     // Make the speed zero 
-                    rigidbody2D.velocity = Vector2.zero;
+                    rigidbody2D.linearVelocity = Vector2.zero;
                     // Moves the player to the respawn point 
                     transform.position = respawnPoint.position;
                     // Take away players life 
