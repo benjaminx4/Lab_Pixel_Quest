@@ -56,7 +56,7 @@ public class PlayerStats : MonoBehaviour
                     // Increase the value of coins by 1
                     currentCoins++;
                     // Updates the UI 
-                    // Ignore for now: coinText.text = currentCoins + "/" + maxCoins;
+                    coinText.text = currentCoins + "/" + maxCoins;
                     // Destroys the coins
                     Destroy(collision.gameObject);
                     break;
