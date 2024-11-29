@@ -9,9 +9,9 @@ public class PlayerStats : MonoBehaviour
     public Transform respawnPoint; // Keeps track of where the player we respawn at 
 
     // Player stats 
-    public float playerLife = 3;   // How much health the player currently has 
+    public float playerLife = 1;   // How much health the player currently has 
     public int currentCoins = 0;   // How many coins has the player collected 
-    private float playerMaxHealth = 3; // What is the max health the player can have 
+    private float playerMaxHealth = 100; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
 
     // Rigidbody 
@@ -73,7 +73,7 @@ public class PlayerStats : MonoBehaviour
                     // Take away players life 
                     playerLife--;
                     // Updates the UI 
-                    heartImage.fillAmount = playerLife / playerMaxHealth;
+                    // THIS IS CODE, BUT IGNORE FOR NOW heartImage.fillAmount = playerLife / playerMaxHealth;
                     // If the player has lost all of their lives reset the level 
                     if (playerLife <= 0)
                     {
