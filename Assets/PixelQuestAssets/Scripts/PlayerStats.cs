@@ -9,9 +9,9 @@ public class PlayerStats : MonoBehaviour
     public Transform respawnPoint; // Keeps track of where the player we respawn at 
 
     // Player stats 
-    public float playerLife = 1;   // How much health the player currently has 
+    public int playerLife = 1;   // How much health the player currently has 
     public int currentCoins = 0;   // How many coins has the player collected 
-    private float playerMaxHealth = 100; // What is the max health the player can have 
+    private int playerMaxHealth = 3; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
 
     // Rigidbody 
@@ -25,11 +25,11 @@ public class PlayerStats : MonoBehaviour
     private const string finishTag = "Finish";
 
     // UI 
-    public Image heartImage;            // Update the Heart Image of the player 
+    public TextMeshProUGUI heartText;   // Update the text showing current health
     public TextMeshProUGUI coinText;    // Update the text showing coins collected 
     public GameObject CoinParent;       // Parent we check to see how many coins are in the level 
 
-    // Auido 
+    // Audio 
     public AudioSource deathSFX;  // Death sound effect 
     public AudioSource coinSFX;   // Coin pick up sound effect 
 
@@ -42,7 +42,8 @@ public class PlayerStats : MonoBehaviour
         // So we save the inforomation at the start of the game 
         maxCoins = CoinParent.transform.childCount;
         // Updates the UI to show the proper values of the level 
-        //coinText.text = currentCoins + "/" + maxCoins;
+        coinText.text = currentCoins + "/" + maxCoins;
+        heartText.text = playerLife + "/" + playerMaxHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,19 +69,17 @@ public class PlayerStats : MonoBehaviour
                     deathSFX.Play();
                     // Make the speed zero 
                     rigidbody2D.linearVelocity = Vector2.zero;
-                    // Moves the player to the respawn point 
-                    transform.position = respawnPoint.position;
                     // Take away players life 
                     playerLife--;
                     // Updates the UI 
-                    // THIS IS CODE, BUT IGNORE FOR NOW heartImage.fillAmount = playerLife / playerMaxHealth;
+                    heartText.text = playerLife + "/" + playerMaxHealth;
                     // If the player has lost all of their lives reset the level 
                     if (playerLife <= 0)
                     {
-                        // Gets the name of the level we're currently in 
-                        string currentLevel = SceneManager.GetActiveScene().name;
-                        // Reload that level 
-                        SceneManager.LoadScene(currentLevel);
+                        // Moves the player to the respawn point 
+                        transform.position = respawnPoint.position;
+                        playerLife = 1;
+                        heartText.text = playerLife + "/" + playerMaxHealth;
                     }
                     break;
                 }
@@ -93,7 +92,7 @@ public class PlayerStats : MonoBehaviour
                         // If the player is missing health we increase their life
                         playerLife++;
                         // Update the UI to show new health 
-                        heartImage.fillAmount = playerLife / playerMaxHealth;
+                        heartText.text = playerLife + "/" + playerMaxHealth;
                         // Destroy the health object 
                         Destroy(collision.gameObject);
                     }
