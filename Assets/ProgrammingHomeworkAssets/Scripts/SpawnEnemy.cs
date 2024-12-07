@@ -38,7 +38,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void EnemySpawn()
     {
-        if(enemyTrash.childCount > 10){ return;}
+        if(enemyTrash.childCount > 5){ return;}
         //Randomizes the postion 
         Vector3 newPosition = GetOrientation();
         var enemy = Instantiate(preFab, newPosition, Quaternion.identity);
