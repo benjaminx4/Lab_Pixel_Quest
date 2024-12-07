@@ -21,7 +21,7 @@ public class PlayerJumping : MonoBehaviour
     void Update()
     {
         // Checks if the player is touching any object who's layermask is called Ground
-        bool groundCheck = Physics2D.OverlapCapsule(ground.position, new Vector2(1, 1f), CapsuleDirection2D.Horizontal, 0, groundMask);
+        bool groundCheck = Physics2D.OverlapCapsule(ground.position, new Vector2(1, 1), CapsuleDirection2D.Horizontal, 0, groundMask);
 
 
         // Checks if the player can jump

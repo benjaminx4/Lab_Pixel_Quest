@@ -15,7 +15,6 @@ public class PQPlayerMovement : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
     }
 
     // Updates the player state.
